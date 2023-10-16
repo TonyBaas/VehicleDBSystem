@@ -1,7 +1,13 @@
+using Microsoft.EntityFrameworkCore;
+using VehicleDBSystem.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<VehicleContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("VehicleContext")));
+
 
 var app = builder.Build();
 

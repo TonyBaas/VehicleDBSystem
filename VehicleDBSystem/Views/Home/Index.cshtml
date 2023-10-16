@@ -1,12 +1,17 @@
-﻿@model List<Vehicle>
+﻿<!--
+    Tony R Baas
+    Oct 15, 2023
+    Vehicle Database System
+-->
+
+@model List<Vehicle>
 @{
     ViewBag.Title = "Vehicle Database System";
 }
 
-<h2>Vehicle Database System</h2>
-
-<a asp-controller="Vehicle" asp-action="Add">Add New Vehicle</a>
-<table class="table table-bordered table-striped">
+<h3 class="text-white">Welcome to the Vehicle Database System!</h3>
+<br />
+<table class="table table-bordered table-striped bg-dark text-white">
     <thead>
         <tr>
             <th>Year</th>
@@ -14,7 +19,7 @@
             <th>Model</th>
             <th>Trim</th>
             <th>Type</th>
-            <th></th>
+            <th><a asp-controller="Vehicle" asp-action="Add">Add New Vehicle</a></th>
         </tr>
     </thead>
     <tbody>
@@ -34,3 +39,15 @@
         }
     </tbody>
 </table>
+
+<style>
+    body {
+        background-color: Black;
+    }
+    a {
+        color:red;
+    }
+    a:hover {
+            color: #a10303;
+    }
+</style>

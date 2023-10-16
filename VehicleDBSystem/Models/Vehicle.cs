@@ -1,5 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
+/*
+    Tony R Baas
+    Oct 15, 2023
+    Vehicle Database System
+*/
+
 namespace VehicleDBSystem.Models
 {
     public class Vehicle

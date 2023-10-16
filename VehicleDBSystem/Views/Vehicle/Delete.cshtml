@@ -1,12 +1,32 @@
-﻿@model Vehicle
+﻿<!--
+    Tony R Baas
+    Oct 15, 2023
+    Vehicle Database System
+-->
+
+@model Vehicle
 @{
     ViewBag.Title = "Delete Vehicle";
 }
-<h2>Confirm Deletion</h2>
-<h3>@Model.Year @Model.Make @Model.Model @Model.Trim @Model.Type</h3>
+<h2 class="text-white">Confirm Deletion</h2>
+<h3 class="text-white">@Model.Year @Model.Make @Model.Model @Model.Trim @Model.Type</h3>
 
 <form asp-action="Delete" method="post">
     <input type="hidden" asp-for="VehicleId" />
     <button type="submit" class="btn btn-primary">Delete</button>
     <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Cancel</a>
 </form>
+
+<style>
+    body {
+        background-color: Black;
+    }
+
+    a {
+        color: red;
+    }
+
+    a:hover {
+        color: #a10303;
+    }
+</style>

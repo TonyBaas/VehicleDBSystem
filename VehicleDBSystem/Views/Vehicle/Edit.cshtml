@@ -1,35 +1,41 @@
-﻿@model Vehicle 
+﻿<!--
+    Tony R Baas
+    Oct 15, 2023
+    Vehicle Database System
+-->
+
+@model Vehicle 
 @{
     string title = ViewBag.Action + " Vehicle"; 
     ViewBag.Title = title;
 }
 
-<h2>@ViewBag.Title</h2>
+<h2 class="text-white">@ViewBag.Title</h2>
 
 <form asp-action="Edit" method="post">
-    <div asp-validation-summary="All" class="text-danger"></div>
+    <div asp-validation-summary="All" class="text-danger text-white"></div>
 
-    <div class="form-group">
+    <div class="form-group text-white">
         <label asp-for="Year">Year</label>
         <input asp-for="Year" class="form-control">
     </div>
 
-    <div class="form-group">
+    <div class="form-group text-white">
         <label asp-for="Make">Make</label>
         <input asp-for="Make" class="form-control">
     </div>
 
-    <div class="form-group">
+    <div class="form-group text-white">
         <label asp-for="Model">Model</label>
         <input asp-for="Model" class="form-control">
     </div>
 
-    <div class="form-group">
+    <div class="form-group text-white">
         <label asp-for="Trim">Trim</label>
         <input asp-for="Trim" class="form-control">
     </div>
 
-    <div class="form-group">
+    <div class="form-group text-white">
         <label asp-for="Type">Body Style</label>
         <input asp-for="Type" class="form-control">
     </div>
@@ -40,4 +46,18 @@
     <a asp-controller="Home" asp-action="Index" 
         class="btn btn-primary">Cancel</a>
 </form>
+
+<style>
+    body {
+        background-color: Black;
+    }
+
+    a {
+        color: red;
+    }
+
+        a:hover {
+            color: #a10303;
+        }
+</style>
 

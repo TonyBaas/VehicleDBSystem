@@ -13,10 +13,12 @@ namespace VehicleDBSystem.Models
         public VehicleContext(DbContextOptions<VehicleContext> options) 
             : base(options)
         { }
+
         public DbSet<Vehicle> Vehicles { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+
             modelBuilder.Entity<Vehicle>().HasData(new Vehicle
             {
                 VehicleId = 1,

@@ -27,5 +27,16 @@ namespace VehicleDBSystem.Models
 
         [Required(ErrorMessage = "Type")]
         public string Type { get; set; }
+
+        public string Slug
+        {
+            get
+            {
+                if (Model == null)
+                    return "";
+                else
+                    return Model.Replace(' ', '-');
+            }
+        }
     }
 }

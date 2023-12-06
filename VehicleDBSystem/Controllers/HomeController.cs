@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using VehicleDBSystem.Models;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 /*
     Tony R Baas
@@ -18,9 +19,21 @@ namespace VehicleDBSystem.Controllers
             context = ctx;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string filterType)
         {
-            var vehicles = context.Vehicles.OrderBy(m => m.Make).ToList();
+            //var vehicles = context.Vehicles.OrderBy(m => m.Make).ToList();
+
+            IQueryable<Vehicle> query = context.Vehicles.OrderBy(m => m.Make);
+
+
+            if (!string.IsNullOrEmpty(filterType))
+            {
+                // Apply the filter if a type is selected
+                query = query.Where(v => v.Type == filterType);
+            }
+
+            var vehicles = query.OrderBy(m => m.Year).ToList();
+
             return View(vehicles);
         }
     }
